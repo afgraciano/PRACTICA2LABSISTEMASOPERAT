@@ -1,0 +1,17 @@
+objdump -d basicHello //mirar el codigo ensamblador
+
+gcc -o miodebug debugger_template.c linenoise.c //compilar el debugeador
+./miodebug basicHello //ejecutar el debugueador 
+
+htop	//mirar maps del proceso donde esta basicHello
+cat /proc/3302/maps	//direccion de mapeo del proceso indicando la direccion que se necesita para poner el break
+
+break 0x55555555518e //direccion del primer llamado al sistema call donde vamos a poner un break que esta en la direccion 118e
+break 0x5555555551a9 // segunda direccion del llamado al sistema call donde vamos a poner un break que esta en la direccion 11a9
+
+continue // comando para continuar implementado
+
+ctrl+d //para salir de la ejecucion
+
+
+
